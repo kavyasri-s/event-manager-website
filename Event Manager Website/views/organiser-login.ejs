@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Organiser Login</title>
+
+  <!-- bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  
+  <!-- custom CSS -->
+  <link rel="stylesheet" href="/main.css" />
+</head>
+
+<!-- body is centered using flexbox with full viewport height -->
+<body class="bg-charcoal text-beige d-flex justify-content-center align-items-center min-vh-100">
+
+  <!-- login card box -->
+  <div class="card p-4" style="max-width: 400px; width: 90%; background-color: #3F4E4F;">
+    <h1 class="text-heading text-center mb-4">Organiser Login</h1>
+
+    <!-- display error msg if login fails -->
+    <% if (error) { %>
+      <div class="alert alert-danger" role="alert">
+        <%= error %>
+      </div>
+    <% } %>
+
+    <!-- login form (POST to /organiser/login) -->
+    <form method="POST" action="/organiser/login" class="mb-3">
+      <div class="mb-3">
+        <label for="password" class="form-label text-beige">Password:</label>
+        <input 
+          type="password" 
+          id="password" 
+          name="password" 
+          required 
+          class="form-control"
+          style="background-color: #2C3639; color: #DCD7C9; border: 1px solid #566667;"
+        />
+      </div>
+
+      <!-- submit button -->
+      <button type="submit" class="btn btn-mocha btn-lg w-100">Login</button>
+    </form>
+
+    <!-- link back to main home page -->
+    <a href="/" class="btn btn-slate w-100">Back to Main Home</a>
+  </div>
+
+</body>
+</html>
